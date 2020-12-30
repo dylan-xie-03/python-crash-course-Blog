@@ -8,7 +8,7 @@
     <li><p>{{blog.title}} -- {{blog.date_added|date:'M d, Y H:i'}}</p></li>
         <p>{{blog.text|linebreaks}}</p>
         <p>
-            <a href="{% url 'blogs:edit_blogpost' blog.id %}">Edit blog</a>
+            <a href="{% url 'blogs:edit_blogpost' blog.id %}">Edit Blog</a>
         </p>
         </p>
     {% empty %}

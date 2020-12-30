@@ -5,4 +5,4 @@ class BlogPostForm(forms.ModelForm):
     class Meta:
         model = BlogPost
         fields = ['text', 'title']
-        labels = {'text':'', 'title':''}
+        # labels = {'text':'', 'title':''}

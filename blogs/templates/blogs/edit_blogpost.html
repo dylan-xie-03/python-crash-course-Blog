@@ -2,8 +2,6 @@
 
 {% block content %}
 
-    <p><a href="{% url 'blogs:edit_blogpost' blog.id %}">{{ blogpost.title }}</a></p>
-
     <p>Edit blogpost:</p>
 
     <form action="{% url 'blogs:edit_blogpost' blog.id %}" method='post'>

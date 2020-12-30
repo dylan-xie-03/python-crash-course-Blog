@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import BlogPost
 from .forms import BlogPostForm
 
+
 # Create your views here.
 def index(request):
     """The home page for blogs"""
@@ -20,6 +21,7 @@ def new_blog(request):
         if form.is_valid():
             form.save()
             return redirect('blogs:index')    # redirect to home page
+
 
     context = {'form':form}
     return render(request, 'blogs/new_blog.html', context)
@@ -55,10 +57,12 @@ def edit_blogpost(request, blog_id):
         form = BlogPostForm(instance=blog, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blogs:index', blog_id = blog.id )
+            return redirect('blogs:index')
 
-        context = {'blog':blog, 'form':form}
-        return render(request, 'blogs/edit_blogpost.html', context)
+
+    context = {'blog':blog, 'form':form}
+    return render(request, 'blogs/edit_blogpost.html', context)
+
 
 # def blogpost(request, blogpost_id):
 #     """Show a single topic and all its entries"""
