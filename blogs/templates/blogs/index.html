@@ -3,6 +3,7 @@
 {% block content %}
 <p>below are posts</p>
 <ul>
+
     {% for blog in blogs %}
 
     <li><p>{{blog.title}} -- {{blog.date_added|date:'M d, Y H:i'}}</p></li>
